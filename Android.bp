@@ -311,6 +311,10 @@ android_app_import {
     },
     privileged: true,
     product_specific: true,
+    enabled: select(soong_config_variable("bliss", "with_gms"), {
+        "true": false,
+        default: true,
+    }),
 }
 
 android_app_import {
